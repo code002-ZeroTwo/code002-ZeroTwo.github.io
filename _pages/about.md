@@ -2,16 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <a href='#'>Affiliations</a>.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -19,8 +16,12 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi there, my name is Siddhartha Paudel, and I am currently a student at St. Xavier's College, which is affiliated with Tribhuvan University in Nepal. I was born and raised in Kathmandu, Nepal, and completed my high school education at Kathmandu Model College.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I have always had a keen interest in computer science, which is why I decided to pursue a Bachelor's degree in Computer Science and Information Technology. Even though I don't have a strong GPA, I consider myself a hardworking student who is dedicated to learning and growing in my field.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Apart from my academic pursuits, I am also fascinated by human psychology, and enjoy reading and learning about it in my free time. I am a big fan of anime and manga, and love to watch and read them whenever I get the chance. Music is also a big part of my life, and Kendrick Lamar is one of my favorite artists.
+
+[github](https://github.com/code002-ZeroTwo)
+[linkedin](https://www.linkedin.com/in/siddhartha-paudel-257994218/)
+###### contact-me: siddharthpaudel41@gmail.com
