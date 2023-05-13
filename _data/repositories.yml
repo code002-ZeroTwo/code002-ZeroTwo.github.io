@@ -1,12 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - code002-ZeroTwo
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - code002-ZeroTwo/game
+  - code002-ZeroTwo/sketch
+  - code002-ZeroTwo/react
+  - code002-ZeroTwo/web-programming
+  - code002-ZeroTwo/code002-ZeroTwo.github.io
