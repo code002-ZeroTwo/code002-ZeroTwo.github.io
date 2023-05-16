@@ -21,7 +21,3 @@ Hi there, my name is Siddhartha Paudel, and I am currently a student at St. Xavi
 I have always had a keen interest in computer science, which is why I decided to pursue a Bachelor's degree in Computer Science and Information Technology. Even though I don't have a strong GPA, I consider myself a hardworking student who is dedicated to learning and growing in my field.
 
 Apart from my academic pursuits, I am also fascinated by human psychology, and enjoy reading and learning about it in my free time. I am a big fan of anime and manga, and love to watch and read them whenever I get the chance. Music is also a big part of my life, and Kendrick Lamar is one of my favorite artists.
-
-[github](https://github.com/code002-ZeroTwo)
-[linkedin](https://www.linkedin.com/in/siddhartha-paudel-257994218/)
-###### contact-me: siddharthpaudel41@gmail.com
