@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>2023 | Siddhartha  Paudel</title>
+    <title>git pull alternative | Siddhartha  Paudel</title>
     <meta name="author" content="Siddhartha  Paudel">
     <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
@@ -33,13 +33,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://code002-zerotwo.github.io/blog/2023/">
+    <link rel="canonical" href="https://code002-zerotwo.github.io/blog/2023/git-pull/">
 
     <!-- Dark Mode -->
     
@@ -117,37 +120,153 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <div class="post">
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
+
+<div class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> <i class="fas fa-calendar fa-sm"></i> 2023 </h1>
-    <p class="post-description"> an archive of posts from this year </p>
+    <h1 class="post-title">git pull alternative</h1>
+    <p class="post-meta">May 19, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/category/git-pull">
+          <i class="fas fa-tag fa-sm"></i> git_pull</a>  
+          <a href="/blog/category/git-fetch">
+          <i class="fas fa-tag fa-sm"></i> git_fetch</a>  
+          <a href="/blog/category/git-merge">
+          <i class="fas fa-tag fa-sm"></i> git_merge</a>  
+          
+
+    </p>
   </header>
 
-  <article>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-        <tr>
-          <th scope="row">May 19, 2023</th>
-          <td>
-              <a class="post-link" href="/blog/2023/git-pull/">git pull alternative</a>
-          </td>
-        </tr>
-      
-        <tr>
-          <th scope="row">May 18, 2023</th>
-          <td>
-              <a class="post-link" href="/blog/2023/boot-entry-deletion/">update grub entries after uninstalling linux</a>
-          </td>
-        </tr>
-      
-      </table>
-    </div>
-  </article>
+  <article class="post-content">
+    
+    <div id="markdown-content">
+      <p>Looks like there are multiple cases where <code class="language-plaintext highlighter-rouge">git pull</code> doesn’t work.<br>
+In my case I was trying to push my repo from local machine just after creating a empty repo in github. But I created the new repo in github with <strong>readme.md</strong> file. So git pull was required to merge the local repo with remote repo.</p>
 
+<p><br></p>
+
+<h3 id="when-do-you-need-git-pull">When do you need git pull</h3>
+
+<p>When remote repo is changed or updated and your local repo is not updated in such case you need make your local repo in sync with the remote repo so before trying to push code to github, you have to run <code class="language-plaintext highlighter-rouge">git pull</code> first.</p>
+
+<p><br></p>
+<h4 id="what-happened-in-my-case">What happened in my case</h4>
+<p>When I entered following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin main
+</code></pre></div></div>
+
+<p>It showed following errors and hints.</p>
+<div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/gitpull.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
 </div>
 
+<p>So, I tried alternative.
+<br></p>
+
+<h3 id="alternative-for-git-pull">Alternative for <code class="language-plaintext highlighter-rouge">git pull</code>
+</h3>
+
+<p><code class="language-plaintext highlighter-rouge">git pull</code> is a Git command used to fetch the latest changes from a remote repository and merge them into the current branch. It combines the <code class="language-plaintext highlighter-rouge">git fetch</code> and <code class="language-plaintext highlighter-rouge">git merge</code> commands into a single step. It is typically used to update your local branch with the latest changes from a remote repository.</p>
+
+<p>So I tried running:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin main
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git fetch</code>: This command retrieves the latest changes from the remote repository specified by origin. It updates your local copy of the remote repository, including branches, tags, and commit history. The fetched changes are stored in your local repository, but they are not merged into any branch.</p>
+  </li>
+  <li>
+    <p>origin: It refers to the name of the remote repository. Typically, the default name for the remote repository is “origin,” but it can be different depending on how you have configured your Git repository.</p>
+  </li>
+  <li>
+    <p>main: It represents the name of the branch you want to fetch from the remote repository. In this case, you are fetching the latest changes from the remote branch named “main.” You can replace “main” with the desired branch name.</p>
+  </li>
+</ol>
+
+<p>Then,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge origin/main --allow-unrelated-histories
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git merge</code>: This is the Git command used to merge changes from one branch into another.</p>
+  </li>
+  <li>
+    <p>origin/main: It represents the branch from the remote repository (commonly named “origin”) that you want to merge into the current branch.</p>
+  </li>
+  <li>
+    <p>–allow-unrelated-histories: This flag allows the merge to proceed even if the branches being merged have unrelated commit histories. By default, Git prevents merging branches with unrelated histories to avoid accidental merging of unrelated codebases.</p>
+  </li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>After following these process I was able to push changes to remote repository in github.
+Note that this is just one method to perform this task. There might be other similar kind of technique to solve similar kind of problem.</p>
+
+    </div>
+  </article><div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "alshedivat/al-folio",
+        "data-repo-id": "MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOA5PmLc4CTBt6",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
+</div>
+
+          </div>
+        </div>
+        
       
     </div>
 
@@ -175,6 +294,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>

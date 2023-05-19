@@ -1,5 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://code002-zerotwo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://code002-zerotwo.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-19T12:25:02+00:00</updated><id>https://code002-zerotwo.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">update grub entries after uninstalling linux</title><link href="https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion/" rel="alternate" type="text/html" title="update grub entries after uninstalling linux" /><published>2023-05-18T11:29:28+00:00</published><updated>2023-05-18T11:29:28+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion/"><![CDATA[<!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://code002-zerotwo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://code002-zerotwo.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-19T17:09:17+00:00</updated><id>https://code002-zerotwo.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">git pull alternative</title><link href="https://code002-zerotwo.github.io/blog/2023/git-pull/" rel="alternate" type="text/html" title="git pull alternative" /><published>2023-05-19T16:21:57+00:00</published><updated>2023-05-19T16:21:57+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/git-pull</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/git-pull/"><![CDATA[<p>Looks like there are multiple cases where <code class="language-plaintext highlighter-rouge">git pull</code> doesn’t work.<br />
+In my case I was trying to push my repo from local machine just after creating a empty repo in github. But I created the new repo in github with <strong>readme.md</strong> file. So git pull was required to merge the local repo with remote repo.</p>
+
+<p><br /></p>
+
+<h3 id="when-do-you-need-git-pull">When do you need git pull</h3>
+
+<p>When remote repo is changed or updated and your local repo is not updated in such case you need make your local repo in sync with the remote repo so before trying to push code to github, you have to run <code class="language-plaintext highlighter-rouge">git pull</code> first.</p>
+
+<p><br /></p>
+<h4 id="what-happened-in-my-case">What happened in my case</h4>
+<p>When I entered following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin main
+</code></pre></div></div>
+
+<p>It showed following errors and hints.</p>
+<div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/gitpull.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>So, I tried alternative.
+<br /></p>
+
+<h3 id="alternative-for-git-pull">Alternative for <code class="language-plaintext highlighter-rouge">git pull</code></h3>
+
+<p><code class="language-plaintext highlighter-rouge">git pull</code> is a Git command used to fetch the latest changes from a remote repository and merge them into the current branch. It combines the <code class="language-plaintext highlighter-rouge">git fetch</code> and <code class="language-plaintext highlighter-rouge">git merge</code> commands into a single step. It is typically used to update your local branch with the latest changes from a remote repository.</p>
+
+<p>So I tried running:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin main
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git fetch</code>: This command retrieves the latest changes from the remote repository specified by origin. It updates your local copy of the remote repository, including branches, tags, and commit history. The fetched changes are stored in your local repository, but they are not merged into any branch.</p>
+  </li>
+  <li>
+    <p>origin: It refers to the name of the remote repository. Typically, the default name for the remote repository is “origin,” but it can be different depending on how you have configured your Git repository.</p>
+  </li>
+  <li>
+    <p>main: It represents the name of the branch you want to fetch from the remote repository. In this case, you are fetching the latest changes from the remote branch named “main.” You can replace “main” with the desired branch name.</p>
+  </li>
+</ol>
+
+<p>Then,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge origin/main --allow-unrelated-histories
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git merge</code>: This is the Git command used to merge changes from one branch into another.</p>
+  </li>
+  <li>
+    <p>origin/main: It represents the branch from the remote repository (commonly named “origin”) that you want to merge into the current branch.</p>
+  </li>
+  <li>
+    <p>–allow-unrelated-histories: This flag allows the merge to proceed even if the branches being merged have unrelated commit histories. By default, Git prevents merging branches with unrelated histories to avoid accidental merging of unrelated codebases.</p>
+  </li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>After following these process I was able to push changes to remote repository in github.
+Note that this is just one method to perform this task. There might be other similar kind of technique to solve similar kind of problem.</p>]]></content><author><name></name></author><category term="git_pull" /><category term="git_fetch" /><category term="git_merge" /><summary type="html"><![CDATA[Looks like there are multiple cases where git pull doesn’t work. In my case I was trying to push my repo from local machine just after creating a empty repo in github. But I created the new repo in github with readme.md file. So git pull was required to merge the local repo with remote repo.]]></summary></entry><entry><title type="html">update grub entries after uninstalling linux</title><link href="https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion/" rel="alternate" type="text/html" title="update grub entries after uninstalling linux" /><published>2023-05-18T11:29:28+00:00</published><updated>2023-05-18T11:29:28+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/boot-entry-deletion/"><![CDATA[<!--
 ## Adding a Table of Contents
 
 To add a table of contents to a post as a sidebar, simply add
@@ -26,7 +104,7 @@ toc:
 
 <p>This shows the Bootorder of entries,boot number of each entry which is identified by hexadecimal number. (*) means that the boot entry is active.</p>
 
-<div class="row mt-3">
+<div>
     <div class="col-sm mt-3 mt-md-0">
         <figure>
 
