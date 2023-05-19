@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://code002-ZeroTwo.github.io/sitemap.xml
