@@ -1,5 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://code002-zerotwo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://code002-zerotwo.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-19T17:09:17+00:00</updated><id>https://code002-zerotwo.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">git pull alternative</title><link href="https://code002-zerotwo.github.io/blog/2023/git-pull/" rel="alternate" type="text/html" title="git pull alternative" /><published>2023-05-19T16:21:57+00:00</published><updated>2023-05-19T16:21:57+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/git-pull</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/git-pull/"><![CDATA[<p>Looks like there are multiple cases where <code class="language-plaintext highlighter-rouge">git pull</code> doesn’t work.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://code002-zerotwo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://code002-zerotwo.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-07-08T13:31:45+00:00</updated><id>https://code002-zerotwo.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Integrate Django Project with React app</title><link href="https://code002-zerotwo.github.io/blog/2023/integrate-django-and-react/" rel="alternate" type="text/html" title="Integrate Django Project with React app" /><published>2023-07-08T11:40:06+00:00</published><updated>2023-07-08T11:40:06+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/integrate-django%20and%20react</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/integrate-django-and-react/"><![CDATA[<p>To integrate <strong>django project</strong> and <strong>react app</strong>. You can follow following steps:</p>
+
+<p><br /></p>
+
+<h3 id="create-a-django-project"><strong>Create a Django project</strong></h3>
+
+<p>create a django project with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startproject projectname
+</code></pre></div></div>
+
+<p>Then cd to your project with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd projectname
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="create-a-react-project"><strong>Create a React project</strong></h3>
+
+<p>Now create a new folder inside root directory of your django project.you can call it <code class="language-plaintext highlighter-rouge">frontend</code> for example.</p>
+
+<p>After creating new folder for your react app, initilize new React Project with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx create-react-app .
+</code></pre></div></div>
+
+<p>In the terminal, run the following command to install the necessary dependencies:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+
+<p>This will install the required dependencies based on the package.json file.</p>
+
+<p>Run the following command to build the React app</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
+
+<p>Start the development server for your React app by running the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="configure-django-project"><strong>Configure Django project</strong></h3>
+
+<p>In <code class="language-plaintext highlighter-rouge">settings.py</code> of your django project:</p>
+
+<h4 id="configure-template"><strong>Configure Template</strong></h4>
+
+<p>import the os module with:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import os
+</code></pre></div></div>
+
+<p>Search and find the TEMPLATES in <code class="language-plaintext highlighter-rouge">settings.py</code>. and change the following.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'DIRS': [os.path.join(BASE_DIR, 'frontend/build')]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="configure-static-files"><strong>Configure Static Files</strong></h4>
+
+<p>Add the following lines of code in <code class="language-plaintext highlighter-rouge">settings.py</code> to configure static files:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'frontend/build/static')
+]  
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+
+<p>With these simple steps now you can integrate react and django project and work with them accordingly.</p>]]></content><author><name></name></author><category term="django-project" /><category term="react-app" /><category term="web-app" /><summary type="html"><![CDATA[Simple way to integrate Django project and React app]]></summary></entry><entry><title type="html">git pull alternative</title><link href="https://code002-zerotwo.github.io/blog/2023/git-pull/" rel="alternate" type="text/html" title="git pull alternative" /><published>2023-05-19T16:21:57+00:00</published><updated>2023-05-19T16:21:57+00:00</updated><id>https://code002-zerotwo.github.io/blog/2023/git-pull</id><content type="html" xml:base="https://code002-zerotwo.github.io/blog/2023/git-pull/"><![CDATA[<p>Looks like there are multiple cases where <code class="language-plaintext highlighter-rouge">git pull</code> doesn’t work.<br />
 In my case I was trying to push my repo from local machine just after creating a empty repo in github. But I created the new repo in github with <strong>readme.md</strong> file. So git pull was required to merge the local repo with remote repo.</p>
 
 <p><br /></p>
