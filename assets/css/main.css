@@ -355,11 +355,13 @@ blockquote {
 footer.fixed-bottom {
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
+  align-items: center;
 }
 footer.fixed-bottom .container {
   color: var(--global-footer-text-color);
   padding-top: 9px;
   padding-bottom: 8px;
+  margin-left: 40%;
 }
 footer.fixed-bottom a {
   color: var(--global-footer-link-color);
@@ -808,11 +810,13 @@ progress::-moz-progress-bar {
 .btn-group.dropdown .dropdown-item:hover {
   color: var(--global-hover-color);
 }
-.btn-group.dropdown .dropdown-item.active, .btn-group.dropdown .dropdown-item:active {
+.btn-group.dropdown .dropdown-item.active,
+.btn-group.dropdown .dropdown-item:active {
   background-color: var(--global-hover-color);
   color: var(--global-hover-text-color) !important;
 }
-.btn-group.dropdown .dropdown-item.active:hover, .btn-group.dropdown .dropdown-item:active:hover {
+.btn-group.dropdown .dropdown-item.active:hover,
+.btn-group.dropdown .dropdown-item:active:hover {
   color: var(--global-hover-text-color);
 }
 
